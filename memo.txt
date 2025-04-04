@@ -1,0 +1,21 @@
+symfony check:req
+symfony new demoapp
+symfony serve --no-tls
+composer require symfony/twig-bundle
+composer require symfony/maker-bundle
+composer require maker --dev
+php bin/console make:controller Product
+php bin/console debug:router
+composer require symfony/orm-pack
+php bin/console doctrine:database:create
+php bin/console make:entity product
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+composer require orm-fixtures --dev
+php bin/console doctrine:fixtures:load
+php bin/console dbal:run-sql "select * from partner"
+dump($products);
+symfony server:stop
+composer require --dev symfony/profiler-pack
+composer require symfony/form
+php bin/console make:form

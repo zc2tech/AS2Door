@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PartnerController!{% endblock %}
+
+{% block body %}
+<h1>New Partner </h1>
+<table>
+    <tbody>
+        <tr>
+            <th>as2_ident</th>
+            <td>{{ partner.as2Ident }}</td>
+        </tr>
+        <tr>
+            <th>is_local</th>
+            <td>{{ partner.isLocal }}</td>
+        </tr>
+        <tr>
+            <th>signed_mdn</th>
+            <td>{{ partner.signedMdn }}</td>
+        </tr>
+        <tr>
+            <th>use_http_auth</th>
+            <td>{{ partner.useHttpAuth }}</td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

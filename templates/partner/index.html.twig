@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PartnerController!{% endblock %}
+
+{% block body %}
+<h1>Partners </h1>
+<a href="{{ path('partner_new') }}">New Partner</a>
+
+<table>
+    <thead>
+        <tr>
+            <th>as2_ident</th>
+            <th>is_local</th>
+            <th>url</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for partner in partners %}
+            <tr>
+                <td><a href=" {{ path('partner_show', {'id': partner.id}) }}"> {{ partner.as2Ident }} </a> </td>
+                <td>{{ partner.isLocal }} </td>
+                <td>{{ partner.url }} </td>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
